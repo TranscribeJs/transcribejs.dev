@@ -1,2 +1,1 @@
-# transcribejs.dev
-repo for website
+repo for transcribejs.dev website
