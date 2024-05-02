@@ -43,6 +43,13 @@
       p {
         font-size: inherit !important;
         line-height: inherit !important;
+        hyphens: auto;
+        text-wrap: pretty;
+        max-width: 70ch;
+      }
+
+      .content {
+        max-width: 100ch;
       }
 
       .sidebar ul {
@@ -78,6 +85,10 @@
       }
       section.cover .cover-main > p:last-child a {
         color: unset;
+      }
+
+      .cover p {
+        max-width: none;
       }
 
       .cover img {
