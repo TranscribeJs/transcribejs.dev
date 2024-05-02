@@ -7,6 +7,7 @@ Thank you to the creators and contributors of the following open source librarie
 - **whisper.cpp**: A C++ implementation of whisper. [GitHub Repository](https://github.com/ggerganov/whisper.cpp)
 - **emscripten**: A toolchain for compiling C and C++ code to WebAssembly. [Official Site](https://emscripten.org/)
 - **water.css**: A minimal CSS framework for styling HTML. [Official Site](https://watercss.kognise.dev/)
+- **docsify.js**: A magical documentation site generator. [Official Site](https://docsify.js.org)
 - **fft.js**: A library for Fast Fourier Transform calculations. [GitHub Repository](https://github.com/indutny/fft.js)
 - **Moattar, Mohammad & Homayoonpoor, Mahdi. (2010).** A simple but efficient real-time voice activity detection algorithm. [Research Paper](https://www.researchgate.net/publication/255667085_A_simple_but_efficient_real-time_voice_activity_detection_algorithm)
 - **vitest**: A website for testing voice recognition. [Official Site](https://vitest.dev/)
