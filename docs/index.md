@@ -8,8 +8,8 @@ Transcribe.js is a JavaScript library that provides a high level api/interface f
 
 ## Features
 
-- transcribe audio/video files (formats supported the browser)
-- load audio and model file from URL or use File object (eg. from file input)
+- transcribe audio/video files (formats supported by the browser)
+- load media and model file from URL or use File object (eg. from file input)
 - output detailed JSON
 - optional dtw word level timestamps
 - optional translate to english
