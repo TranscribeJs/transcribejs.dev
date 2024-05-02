@@ -29,7 +29,7 @@ All packages are under [@transcribe](https://www.npmjs.com/search?q=%40transcrib
 | @transcribe/shout       | Wasm build based on [whisper.cpp](https://github.com/ggerganov/whisper.cpp). Contains Module file including the wasm binary and a separate webworker file. |
 | @transcribe/transcriber | `FileTranscriber` and `StreamTranscriber` for transcribing media files or streams.                                                                         |
 
-## Support (code or coffee)
+## Support (ideas, code or coffee)
 
 Please support this project if you can. Code, coffee or any other support, everything is very welcome and appreciated.
 
