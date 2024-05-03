@@ -2,7 +2,12 @@
 
 StreamTranscriber transcribes audio from stream media like microphone input. The transcriber waits for voice activity, buffers/records audio and sends the audio data to the wasm.
 
-Unfortunatly processing is way too slow for real time applications. But maybe this will work in the future. Also this doesn't work in Firefox unless the stream source has a sample rate of 16kHz.
+Unfortunatly processing is ~way too slow~ _depends on your machine and the size of the model_ for real time applications. But maybe this will work in the future. Also this doesn't work in Firefox unless the stream source has a sample rate of 16kHz.
+
+Future ideas:
+
+- add better vad ([Silero VAD](https://github.com/snakers4/silero-vad))
+- fix firefox by providing own sample rate convertion (instead of web audio api)
 
 [Stream Example](https://examples.transcribejs.dev/examples/stream.html)
 
