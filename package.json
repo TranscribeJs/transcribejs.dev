@@ -1,0 +1,24 @@
+{
+  "name": "transcribejs.dev",
+  "version": "1.0.0",
+  "description": "repo for transcribejs.dev website",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@sherby/eleventy-plugin-files-minifier": "^1.1.1",
+    "clean-css": "^5.3.3",
+    "water.css": "^2.1.1"
+  }
+}

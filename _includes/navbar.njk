@@ -1,0 +1,61 @@
+<section class="nav nav-main">
+  <a href="/" class="unstyled">
+    <h2>Transcribe.js</h2>
+  </a>
+
+  <button id="mainNavToggle" class="btn" aria-expanded="true" aria-controls="mainNav">Menu</button>
+
+  <nav id="mainNav">
+    <ul>
+      {% for item in nav %}
+        <li>
+          {% if item.url %}
+            <span class="nav-title">
+              <a href="{{ item.url }}" {% if item.url == page.url %}class="active" aria-current="page"{% endif %}>
+                {{ item.title }}
+              </a>
+            </span>
+          {% else %}
+            <span class="nav-title">{{ item.title }}</span>
+            <ul>
+              {% for subitem in item.items %}
+                <li>
+                  <a href="{{ subitem.url }}" {% if subitem.url == page.url %}class="active"{% endif %}>
+                    {{ subitem.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</section>
+
+<script>
+  (function () {
+    const btn = document.querySelector("#mainNavToggle");
+    const isSmallScreen = window.matchMedia("screen and (max-width: 800px)");
+
+    if (isSmallScreen.matches) {
+      btn.setAttribute("aria-expanded", "false")
+    }
+
+    isSmallScreen.addEventListener("change", (e) => {
+      if (e.matches) {
+        btn.setAttribute("aria-expanded", "false")
+      } else {
+        btn.setAttribute("aria-expanded", "true")
+      }
+    });
+
+    btn.addEventListener("click", () => {
+      if (btn.getAttribute("aria-expanded") === "false") {
+        btn.setAttribute("aria-expanded", "true");
+      } else {
+        btn.setAttribute("aria-expanded", "false");
+      }
+    });
+  })();
+</script>

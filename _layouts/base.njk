@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+      <title>{{ title }} Transcribe.js</title>
+    {% else %}
+      <title>Transcribe.js</title>
+    {% endif %}
+    <meta name="description" content="Transcribe speech to text in the browser.">
+
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header>
+      <a href="#main" class="skip">Skip to main content</a>
+    </header>
+    {{ content | safe }}
+    {% include "github-corner.njk" %}
+  </body>
+</html>

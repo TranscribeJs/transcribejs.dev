@@ -11,6 +11,6 @@ Also make sure that the file `shout.wasm.worker.mjs` is served with `Content-Typ
 
 ## Model File
 
-You need a ggml model file to run Transcribe.js. You can download them on hugging face https://huggingface.co/ggerganov/whisper.cpp/tree/main .
+You need a ggml model file to run Transcribe.js. You can download them on hugging face [https://huggingface.co/ggerganov/whisper.cpp/tree/main](https://huggingface.co/ggerganov/whisper.cpp/tree/main).
 
 You should start with the (quantized) tiny or base models. Larger models propably won't work due to memory restrictions of wasm or will be just too slow, but you can try it, though.

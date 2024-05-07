@@ -1,0 +1,65 @@
+{
+  "layout": "base.njk",
+  "test": "Hello, World!",
+  "nav": [
+    {
+      "title": "Overview",
+      "url": "/docs/"
+    },
+    {
+      "title": "Getting Started",
+      "items": [
+        {
+          "title": "Prerequisite",
+          "url": "/docs/prerequisite/"
+        },
+        {
+          "title": "Installation",
+          "url": "/docs/installation/"
+        },
+        {
+          "title": "Usage",
+          "url": "/docs/usage/"
+        }
+      ]
+    },
+    {
+      "title": "Advanced",
+      "items": [
+        {
+          "title": "File Transcriber",
+          "url": "/docs/filetranscriber/"
+        },
+        {
+          "title": "Stream Transcriber",
+          "url": "/docs/streamtranscriber/"
+        },
+        {
+          "title": "Multiple Instances",
+          "url": "/docs/multiple/"
+        }
+      ]
+    },
+    {
+      "title": "API",
+      "items": [
+        {
+          "title": "FileTranscriber",
+          "url": "/docs/api-filetranscriber/"
+        },
+        {
+          "title": "StreamTranscriber",
+          "url": "/docs/api-streamtranscriber/"
+        }
+      ]
+    },
+    {
+      "title": "Development",
+      "url": "/docs/development/"
+    },
+    {
+      "title": "Credits",
+      "url": "/docs/credits/"
+    }
+  ]
+}

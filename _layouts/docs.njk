@@ -1,0 +1,13 @@
+---
+layout: base.njk
+---
+<div class="container">
+  {% include "navbar.njk" %}
+  <div class="content">
+
+    <main id="main" class="flow" style="padding-bottom: 3rlh">
+      <a id="editOnGithub" class="btn outline" href="https://github.com/TranscribeJs/transcribejs.dev/blob/main/{{ page.inputPath }}">Edit on GitHub</a>
+      {{ content | safe }}
+    </main>
+  </div>
+</div>

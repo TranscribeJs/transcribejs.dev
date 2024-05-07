@@ -1,0 +1,15 @@
+.github-corner {
+  border-bottom: 0;
+  position: fixed;
+  right: 0;
+  text-decoration: none;
+  top: 0;
+  z-index: 10;
+}
+
+.github-corner svg {
+  color: var(--background-body);
+  fill: var(--theme-color);
+  height: 80px;
+  width: 80px;
+}

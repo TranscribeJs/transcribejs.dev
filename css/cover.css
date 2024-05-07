@@ -1,0 +1,76 @@
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+
+  color: #c8c8c8;
+
+  background: rgba(63, 63, 63, 0.8);
+  background: radial-gradient(
+    circle,
+    rgba(83, 83, 83, 1) 0%,
+    rgba(63, 63, 63, 0.8) 100%
+  );
+}
+
+@media (prefers-color-scheme: light) {
+  .cover {
+    color: var(--text-main);
+    background: rgba(240, 240, 240, 0.8);
+    background: radial-gradient(
+      circle,
+      rgba(240, 240, 240, 1) 0%,
+      rgba(240, 240, 240, 0.8) 100%
+    );
+  }
+}
+
+.cover .content {
+  max-width: 100%;
+  padding: 1rlh;
+  text-align: center;
+  align-self: center;
+}
+
+.cover h1 {
+  margin-left: 2.5rem;
+  font-weight: 300;
+}
+
+.cover .version {
+  position: relative;
+  top: 1rlh;
+  left: -0.5rem;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.cover p {
+  font-size: 1.5rem;
+}
+
+.cover pre {
+  margin: 2rlh 0 3rlh !important;
+  padding: 2rlh 3rlh;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+}
+
+@media screen and (max-width: 800px) {
+  .cover pre {
+    padding: 1rlh;
+  }
+
+  .cover h1 {
+    margin-left: 0;
+  }
+
+  .cover .version {
+    top: 0.5rlh;
+    left: 0;
+  }
+}
