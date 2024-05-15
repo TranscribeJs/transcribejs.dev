@@ -2,6 +2,7 @@ const eleventyPluginFilesMinifier = require("@sherby/eleventy-plugin-files-minif
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const { execSync } = require("child_process");
+const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = function (eleventyConfig) {
   // plugins
@@ -26,6 +27,17 @@ module.exports = function (eleventyConfig) {
     }
 
     return content;
+  });
+
+  // load md from github
+  eleventyConfig.addAsyncShortcode("remote_include", async function (urlPath) {
+    const url = new URL(urlPath).href;
+    const data = await EleventyFetch(url, {
+      duration: "5m",
+      type: "text",
+    });
+
+    return data;
   });
 
   eleventyConfig.on("afterBuild", () => {
