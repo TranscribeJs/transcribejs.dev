@@ -46,6 +46,7 @@ const result = await transcriber.transcribe(
     max_len: 0, // limit max number of characters in one token, 0 -> no limit
     split_on_words: false, //split on new word rather than token
     suppress_non_speech: false, // remove non speech tokens
+    token_timestamps: true, // calculate token level timestamps
   }
 );
 

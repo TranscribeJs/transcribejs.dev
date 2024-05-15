@@ -68,6 +68,7 @@ await transcriber.transcribe(file, options);
 | max_len             | `number`                 | `0`                | Max number of characters in a single segment, `0` means no limit.    |
 | split_on_word       | `boolean`                | `false`            | If `true`, transcriber will try to split the text on word boundarie. |
 | suppress_non_speech | `boolean`                | `false`            | If `true`, transcriber will try to suppress non-speech segments.     |
+| token_timestamps    | `boolean`                | `true`             | If `true`, token level timestamps will be calculated.                |
 
 ### Returns
 
