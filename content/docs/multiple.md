@@ -9,8 +9,8 @@ You should pay attention to the total number of threads being used. For example,
 ```js
 // make sure to cache the model file somehow (service worker would be an option)
 const model = await fetch("/path/to/model.bin");
-const t1 = new FileTranscriber({model});
-const t2 = new FileTranscriber({model});
+const t1 = new FileTranscriber({createModule, model});
+const t2 = new FileTranscriber({createModule, model});
 
 async function transcribe1() {
   await t1.init();

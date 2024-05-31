@@ -14,17 +14,18 @@ const transcriber = new FileTranscriber(options);
 
 ### Parameters
 
-| **Param**   | **Type**                                                                       | **Description**                                                                                              |
-| :---------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| **options** | `FileTranscriberOptions`                                                       |                                                                                                              |
-| model       | `string` \| `File`                                                             | Whisper.cpp model file in ggml format. Will call `fetch()` if string, otherwise will use the provided file.  |
-| workerPath  | `string`                                                                       | Path to `shout.wasm.worker.mjs` file. Defaults to the directory where `shout.wasm.js` is located.            |
-| dtwType     | `DtwType: "tiny" \| "base" \| "small" \| "tiny.en" \| "base.en" \| "small.en"` | Specify the type of the model used if should compute word level timestamps using DTW algorithm.              |
-| onReady     | `() => void`                                                                   | Called after init.                                                                                           |
-| onProgress  | `(progress: number) => void`                                                   | Called on progress (new segment), `0..100`                                                                   |
-| onCanceled  | `() => void`                                                                   | Called after transcription process got canceled.                                                             |
-| onSegment   | `(segment: TranscribeResultSegment) => void`                                   | Called when a new transcribed segment is ready.                                                              |
-| onComplete  | `(result: TranscriptionResult) => void`                                        | Called when transcription is complete.                                                                       |
+| **Param**    | **Type**                                                                       | **Default**                                                 | **Description**                                                                                              |
+| :----------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **options**  | `FileTranscriberOptions`                                                       |                                                             |
+| createModule | `(moduleArg = {}) => Promise<any>`                                             |                                                             | Exported `createModule()` function from `@transcribe/shout`                                                  |
+| model        | `string` \| `File`                                                             |                                                             | Whisper.cpp model file in ggml format. Will call `fetch()` if string, otherwise will use the provided file.  |
+| workerPath   | `string`                                                                       | Defaults to the directory where `shout.wasm.js` is located. | Path to `shout.wasm.worker.mjs` file.                                                                        |
+| dtwType      | `DtwType: "tiny" \| "base" \| "small" \| "tiny.en" \| "base.en" \| "small.en"` | `""`                                                        | Specify the type of the model used if should compute word level timestamps using DTW algorithm.              |
+| onReady      | `() => void`                                                                   | `() => {}`                                                  | Called after init.                                                                                           |
+| onProgress   | `(progress: number) => void`                                                   | `() => {}`                                                  | Called on progress (new segment), `0..100`                                                                   |
+| onCanceled   | `() => void`                                                                   | `() => {}`                                                  | Called after transcription process got canceled.                                                             |
+| onSegment    | `(segment: TranscribeResultSegment) => void`                                   | `() => {}`                                                  | Called when a new transcribed segment is ready.                                                              |
+| onComplete   | `(result: TranscriptionResult) => void`                                        | `() => {}`                                                  | Called when transcription is complete.                                                                       |
 
 ### Returns
 

@@ -4,10 +4,12 @@
     <p>Speech to text in the browser.</p>
 
 ```js
+import createModule from "@transcribe/shout";
 import { FileTranscriber } from "@transcribe/transcriber";
 
 // create new instance
 const transcriber = new FileTranscriber({
+  createModule,
   model: "ggml-tiny-q5_1.bin", // path to ggml model file
 });
 

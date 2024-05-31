@@ -6,10 +6,13 @@ The supported file types depend on the browser used. Every format that can be pl
 Full example of the `FileTranscriber`.
 
 ```js
+import createModule from "/your/project/shout.wasm.js"; // make sure to exclude from your bundler
+// import createModule from "@transcribe/shout"; // if you use import map
 import { FileTranscriber } from "@transcribe/transcriber";
 
 // create new instance
 const transcriber = new FileTranscriber({
+  createModule, // create module function from emscripten wasm build
   model: "/path/to/model.bin", // can be path to model file, or File() object
   workerPath: "/path/to/shout", // set path to directory of shout.wasm.worker.mjs
 

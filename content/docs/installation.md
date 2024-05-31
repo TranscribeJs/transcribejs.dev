@@ -36,8 +36,12 @@ You can use Transcribe.js without a bundler or package manager. Download the fil
 
 <!-- use type="module" for es6 imports -->
 <script type="module">
+  import createModule from "@transcribe/shout";
   import { FileTranscriber } from "@transcribe/transcriber";
 
-  ...
+  const transcriber = new FileTranscriber({
+    createModule,
+    model: "/path/to/ggml-tiny-q5_1.bin",
+  });
 </script>
 ```

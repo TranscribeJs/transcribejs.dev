@@ -16,9 +16,10 @@ import { StreamTranscriber } from "@transcribe/transcriber";
 
 // create new instance
 const streamTranscriber = new StreamTranscriber({
-  model: "/your/project/model.bin",
-  wasmWorkerPath: "/your/project",
-  audioWorkletsPath: "/your/project/audio-worklets",
+  createModule, // create module function from emscripten wasm build
+  model: "/your/project/model.bin", // can be path to model file, or File() object
+  workerPath: "/your/project", // set path to directory of shout.wasm.worker.mjs
+  audioWorkletsPath: "/your/project/audio-worklets", // set path to directory of vad.js, buffer.js
 
   // called on new transcription
   onSegment: (segment) => {
