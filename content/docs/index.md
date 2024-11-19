@@ -19,6 +19,7 @@ Transcribe.js is a JavaScript library that provides a high level api/interface f
 
 - [File Transcriber](https://examples.transcribejs.dev/examples/index.html)
 - [Stream Transcriber (experimental)](https://examples.transcribejs.dev/examples/stream.html) (doesn't work in firefox)
+- [Code Examples](https://github.com/TranscribeJs/examples)
 
 ## Packages
 

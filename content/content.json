@@ -24,6 +24,23 @@
       ]
     },
     {
+      "title": "Integrations",
+      "items": [
+        {
+          "title": "Svelte",
+          "url": "/docs/svelte/"
+        },
+        {
+          "title": "SvelteKit",
+          "url": "/docs/svelte-kit/"
+        },
+        {
+          "title": "Other",
+          "url": "/docs/integration-other/"
+        }
+      ]
+    },
+    {
       "title": "Advanced",
       "items": [
         {
