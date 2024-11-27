@@ -35,6 +35,10 @@
           "url": "/docs/svelte-kit/"
         },
         {
+          "title": "Vue",
+          "url": "/docs/vue/"
+        },
+        {
           "title": "Other",
           "url": "/docs/integration-other/"
         }
