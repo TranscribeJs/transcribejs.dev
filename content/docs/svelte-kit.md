@@ -86,37 +86,46 @@ export default defineConfig({
 
 then use dynamic `import("/shout.wasm.js?url")` in the component
 
-```js
+```html
 // +page.svelte
-<script>
-import { onMount } from "svelte";
-import { FileTranscriber } from "@transcribe/transcriber";
+<script lang="ts">
+  import { onMount } from "svelte";
+  import { FileTranscriber } from "@transcribe/transcriber";
 
-let createModule;
+  let createModule: (args?: {}) => Promise<any>;
+  let transcriber: FileTranscriber;
 
-async function transcribe() {
+  async function transcribe() {
     if (!createModule) {
       console.error("WASM module not loaded yet");
       return;
     }
 
-    const transcriber = new FileTranscriber({
+    // check if transcriber is initialized
+    if (!transcriber?.isReady) return;
+
+    // there must be at least one user interaction (e.g click) before you can call this function
+    const result = await transcriber.transcribe("/jfk.wav", { lang: "en" });
+
+    // do something with the result json
+    this.result = result.transcription.map((t) => t.text).join(" ");
+  }
+
+  onMount(async () => {
+    // dynamic import wasm module from /static
+    // this is a workaround because Rollup can't bundle this file
+    createModule = (await import("/shout.wasm.js?url")).default;
+
+    // create new instance
+    transcriber = new FileTranscriber({
       createModule,
       model: "/ggml-tiny-q5_1.bin",
       workerPath: "/",
     });
 
+    // and initialize the transcriber
     await transcriber.init();
-
-    const result = await transcriber.transcribe("/jfk.wav", { lang: "en" });
-  }
-
-
-onMount(async () => {
-  // dynamic import wasm module from /static
-  // this is a workaround because Rollup can't bundle this file
-  createModule = (await import("/shout.wasm.js?url")).default;
-});
+  });
 </script>
 ```
 

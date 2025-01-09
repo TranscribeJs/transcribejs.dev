@@ -84,20 +84,35 @@ export default defineConfig({
 
 Now you can use Transcribe.js in your Svelte components
 
-```js
+```html
 <script lang="ts">
+  import { onMount } from "svelte";
   import createModule from "@transcribe/shout";
   import { FileTranscriber } from "@transcribe/transcriber";
 
+  let transcriber: FileTranscriber;
+
   async function transcribe() {
-    const transcriber = new FileTranscriber({
+    // check if transcriber is initialized
+    if (!transcriber?.isReady) return;
+
+    // there must be at least one user interaction (e.g click) before you can call this function
+    const result = await transcriber.transcribe("/audio.wav");
+
+    // do something with the result json
+    this.result = result.transcription.map((t) => t.text).join(" ");
+  }
+
+  onMount(async () => {
+    // create new instance
+    transcriber = new FileTranscriber({
       createModule,
       model: "/ggml-tiny-q5_1.bin",
       workerPath: "/",
     });
 
+    // and initialize the transcriber
     await transcriber.init();
-    const result = await transcriber.transcribe("/audio.wav");
-  }
+  });
 </script>
 ```

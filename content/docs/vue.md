@@ -84,25 +84,36 @@ export default defineConfig({
 
 Now you can use Transcribe.js in your Vue components
 
-```js
+```html
 <script setup lang="ts">
-  import { ref } from 'vue'
-  import createModule from '@transcribe/shout'
-  import { FileTranscriber } from '@transcribe/transcriber'
+  import { onMounted, ref } from "vue";
+  import createModule from "@transcribe/shout";
+  import { FileTranscriber } from "@transcribe/transcriber";
 
-  const text = ref<string>('')
+  let transcriber: FileTranscriber;
+  const text = ref<string>("");
 
   async function transcribe() {
-    const transcriber = new FileTranscriber({
-      createModule,
-      model: '/ggml-tiny-q5_1.bin',
-      workerPath: '/',
-    })
+    // check if transcriber is initialized
+    if (!transcriber?.isReady) return;
 
-    await transcriber.init()
-    const result = await transcriber.transcribe('/jfk.wav', { lang: 'en' })
+    // there must be at least one user interaction (e.g click) before you can call this function
+    const result = await transcriber.transcribe("/jfk.wav", { lang: "en" });
 
-    text.value = result.transcription.map((t) => t.text).join(' ')
+    // do something with the result
+    text.value = result.transcription.map((t) => t.text).join(" ");
   }
+
+  onMounted(async () => {
+    // create new instance
+    transcriber = new FileTranscriber({
+      createModule,
+      model: "/ggml-tiny-q5_1.bin",
+      workerPath: "/",
+    });
+
+    // and initialize the transcriber
+    await transcriber.init();
+  });
 </script>
 ```
