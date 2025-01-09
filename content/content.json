@@ -39,6 +39,10 @@
           "url": "/docs/vue/"
         },
         {
+          "title": "Angular",
+          "url": "/docs/angular/"
+        },
+        {
           "title": "Other",
           "url": "/docs/integration-other/"
         }
