@@ -3,15 +3,15 @@
 Check out the [Example](https://examples.transcribejs.dev/examples/index.html).
 
 ```js
-import createModule from "/your/project/shout.wasm.js"; // make sure to exclude from your bundler
-// import createModule from "@transcribe/shout"; // if you use import map
+import createModule from "@transcribe/shout"; // if you use import map or bundler like vite
+// import createModule from "/your/project/shout.wasm.js"; // you can also exclude @transcibe/shout from your bundler and import them manually
 import { FileTranscriber } from "@transcribe/transcriber";
 
 // create new instance
 const transcriber = new FileTranscriber({
   createModule, // create module function from emscripten build
   model: "/your/project/ggml-tiny-q5_1.bin", // path to ggml model file
-  workerPath: "/your/project", // directory of shout.wasm.worker.mjs copied before
+  // workerPath: "/your/project", // only set if you don't use a bundler; directory of shout.wasm.worker.mjs copied before
 });
 
 // init wasm transcriber worker

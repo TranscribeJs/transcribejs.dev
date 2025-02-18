@@ -1,6 +1,12 @@
 # Installation
 
-## NPM
+[Svelte](/docs/svelte)  
+[SvelteKit](/docs/svelte-kit)  
+[Vue](/docs/vue)  
+[Angular](/docs/angular)  
+[Other](/docs/integration-other)
+
+## NPM (without bundler)
 
 Install shout wasm and transcriber packages
 
@@ -8,7 +14,7 @@ Install shout wasm and transcriber packages
 npm install --save @transcribe/transcriber
 ```
 
-copy the shout.wasm and webworker files to your project directory
+The `shout.wasm` files must be accessable and served by your webserver. Depending on your project setup you may need to copy them from `node_modules` to your public directory.
 
 ```bash
 # copy shout wasm
