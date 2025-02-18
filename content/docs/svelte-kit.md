@@ -10,12 +10,6 @@ Install the package
 npm install @transcribe/transcriber
 ```
 
-and copy the files from `@transcribe/shout` to `/public`
-
-```bash
-cp -r node_modules/@transcribe/shout/src/shout/* static/
-```
-
 ## Cross-Origin Headers
 
 The wasm files must be served with the correct Cross-Origin headers. Otherwise browsers will refuse to load the files.
@@ -63,11 +57,9 @@ app.use((req, res, next) => {
 
 Depending on your deployment target you need to make sure that the webserver sets the [correct headers](/docs/prerequisite) for `shout.wasm.js` and `shout.wasm.worker.mjs` .
 
-## Usage
+## Import/Bundle
 
-Rollup is not able to bundle `shout.wasm.js`. Also using an `importmap` like in Svelte doesn't work. To work around this we use a dynamic import that loads the module from `/static/shout.wasm.js`.
-
-First exclude `shout.wasm.js` from the bundler in `vite.config.ts`
+Exclude the `@transcribe/shout` package from dependency optimization and set `worker.format: "es"`.
 
 ```js
 // vite.config.ts
@@ -76,31 +68,29 @@ First exclude `shout.wasm.js` from the bundler in `vite.config.ts`
 
 export default defineConfig({
   // ...
-  build: {
-    rollupOptions: {
-      external: ["/shout.wasm.js?url"],
-    },
+  optimizeDeps: {
+    exclude: ["@transcribe/shout"],
+  },
+  worker: {
+    format: "es",
   },
 });
 ```
 
-then use dynamic `import("/shout.wasm.js?url")` in the component
+## Usage
+
+Now you can use Transcribe.js in your Svelte-Kit components
 
 ```html
 // +page.svelte
 <script lang="ts">
+  import createModule from "@transcribe/shout";
   import { onMount } from "svelte";
   import { FileTranscriber } from "@transcribe/transcriber";
 
-  let createModule: (args?: {}) => Promise<any>;
   let transcriber: FileTranscriber;
 
   async function transcribe() {
-    if (!createModule) {
-      console.error("WASM module not loaded yet");
-      return;
-    }
-
     // check if transcriber is initialized
     if (!transcriber?.isReady) return;
 
@@ -112,15 +102,10 @@ then use dynamic `import("/shout.wasm.js?url")` in the component
   }
 
   onMount(async () => {
-    // dynamic import wasm module from /static
-    // this is a workaround because Rollup can't bundle this file
-    createModule = (await import("/shout.wasm.js?url")).default;
-
     // create new instance
     transcriber = new FileTranscriber({
       createModule,
       model: "/ggml-tiny-q5_1.bin",
-      workerPath: "/",
     });
 
     // and initialize the transcriber
