@@ -1,3 +1,7 @@
+---
+title: "File Transcriber"
+---
+
 # File Transcriber
 
 FileTranscriber transcribes audio from media files like mp3, mp4, wav, ogg, ect.

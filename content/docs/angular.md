@@ -1,3 +1,7 @@
+---
+title: "Angular"
+---
+
 # Angular
 
 [Full Working Example](https://github.com/TranscribeJs/examples/tree/main/angular)

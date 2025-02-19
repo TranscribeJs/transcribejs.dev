@@ -1,4 +1,8 @@
-# Other
+---
+title: "Other Integrations"
+---
+
+# Other Integrations
 
 Other frameworks/libraries will be added infrequent.
 

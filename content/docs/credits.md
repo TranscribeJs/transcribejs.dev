@@ -1,3 +1,7 @@
+---
+title: "Credits"
+---
+
 # Credits
 
 Thank you to the creators and contributors of the following open source libraries that were used in this project:

@@ -1,3 +1,7 @@
+---
+title: "Vue"
+---
+
 # Vue
 
 [Full Working Example](https://github.com/TranscribeJs/examples/tree/main/vue)

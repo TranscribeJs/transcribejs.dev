@@ -1,3 +1,7 @@
+---
+title: "Svelte"
+---
+
 # Svelte
 
 [Full Working Example](https://github.com/TranscribeJs/examples/tree/main/svelte)

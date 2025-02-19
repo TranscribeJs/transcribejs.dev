@@ -1,3 +1,7 @@
+---
+title: "Multiple Instances and Multi Threading"
+---
+
 # Multiple Instances and Multi Threading
 
 The `FileTranscriber.init()` function can only spawn one wasm instance. If you want to process multiple files in parallel you can create another instance `const t2 = new FileTranscriber(...);`.

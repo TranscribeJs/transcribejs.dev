@@ -1,3 +1,7 @@
+---
+title: "Usage"
+---
+
 # Usage
 
 Check out the [Example](https://examples.transcribejs.dev/examples/index.html).

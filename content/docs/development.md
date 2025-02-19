@@ -1,3 +1,7 @@
+---
+title: "Development"
+---
+
 # Development
 
 Clone the repository, install dependencies, start the dev server and open `http://localhost:9876/examples/index.html` in your browser.

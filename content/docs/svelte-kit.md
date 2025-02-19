@@ -1,3 +1,7 @@
+---
+title: "SvelteKit"
+---
+
 # SvelteKit
 
 [Full Working Example](https://github.com/TranscribeJs/examples/tree/main/svelte-kit)

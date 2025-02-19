@@ -1,3 +1,7 @@
+---
+title: "StreamTranscriber API"
+---
+
 # StreamTranscriber API
 
 Transcribe an audio stream (e.g microhpone input) to text using the whisper.cpp speech-to-text implementation. This is experimental and not working in Firefox because sample rate conversion with AudioContext is not supported. Also, wasm is way to slow for real-time transcription.

@@ -1,3 +1,7 @@
+---
+title: "FileTranscriber API"
+---
+
 # FileTranscriber API
 
 Transcribe speech from audio/video files to text using the whisper.cpp speech-to-text implementation.

@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% if title %}
-      <title>{{ title }} Transcribe.js</title>
+      <title>{{ title }} | Transcribe.js</title>
     {% else %}
       <title>Transcribe.js</title>
     {% endif %}
     <meta name="description" content="Transcribe speech to text in the browser.">
 
-    <meta property="og:title" content="{{ title or 'Transcribe.js' }}">
+    <meta property="og:title" content="{% if title %}{{ title }} | Transcribe.js{% else %}Transcribe.js{% endif %}">
     <meta property="og:description" content="Transcribe speech to text in the browser.">
     <meta property="og:url" content="https://transcribejs.dev{{ page.url }}">
     <meta property="og:image" content="https://transcribejs.dev/assets/ogimage.png">
     <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ title or 'Transcribe.js' }}">
+    <meta name="twitter:title" content="{% if title %}{{ title }} | Transcribe.js{% else %}Transcribe.js{% endif %}">
     <meta name="twitter:description" content="Transcribe speech to text in the browser.">
     <meta name="twitter:image" content="https://transcribejs.dev/assets/ogimage.png">
 

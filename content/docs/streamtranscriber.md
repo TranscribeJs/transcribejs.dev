@@ -1,3 +1,7 @@
+---
+title: "StreamTranscriber"
+---
+
 # Stream Transcriber (experimental)
 
 StreamTranscriber transcribes audio from stream media like microphone input. The transcriber waits for voice activity, buffers/records audio and sends the audio data to the wasm.
