@@ -43,6 +43,10 @@
           "url": "/docs/angular/"
         },
         {
+          "title": "React",
+          "url": "/docs/react/"
+        },
+        {
           "title": "Other",
           "url": "/docs/integration-other/"
         }
