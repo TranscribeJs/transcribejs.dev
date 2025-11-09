@@ -15,7 +15,6 @@ import { FileTranscriber } from "@transcribe/transcriber";
 const transcriber = new FileTranscriber({
   createModule, // create module function from emscripten build
   model: "/your/project/ggml-tiny-q5_1.bin", // path to ggml model file
-  // workerPath: "/your/project", // only set if you don't use a bundler; directory of shout.wasm.worker.mjs copied before
 });
 
 // init wasm transcriber worker

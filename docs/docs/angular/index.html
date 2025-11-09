@@ -42,7 +42,6 @@
     <span class="token keyword">this</span><span class="token punctuation">.</span>transcriber <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileTranscriber</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
       createModule<span class="token punctuation">,</span>
       <span class="token property literal-property">model</span><span class="token operator">:</span> <span class="token string">"/ggml-tiny-q5_1.bin"</span><span class="token punctuation">,</span> <span class="token comment">// public path to model file</span>
-      <span class="token property literal-property">workerPath</span><span class="token operator">:</span> <span class="token string">"/"</span><span class="token punctuation">,</span> <span class="token comment">// public path to wasm worker files copied before</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initTranscribe</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>

@@ -6,7 +6,6 @@
 <span class="token keyword">const</span> transcriber <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileTranscriber</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
   createModule<span class="token punctuation">,</span> <span class="token comment">// create module function from emscripten build</span>
   <span class="token property literal-property">model</span><span class="token operator">:</span> <span class="token string">"/your/project/ggml-tiny-q5_1.bin"</span><span class="token punctuation">,</span> <span class="token comment">// path to ggml model file</span>
-  <span class="token comment">// workerPath: "/your/project", // only set if you don't use a bundler; directory of shout.wasm.worker.mjs copied before</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment">// init wasm transcriber worker</span>

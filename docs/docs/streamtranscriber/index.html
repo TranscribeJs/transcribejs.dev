@@ -4,7 +4,6 @@
 <span class="token keyword">const</span> streamTranscriber <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StreamTranscriber</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
   createModule<span class="token punctuation">,</span> <span class="token comment">// create module function from emscripten wasm build</span>
   <span class="token literal-property property">model</span><span class="token operator">:</span> <span class="token string">"/your/project/model.bin"</span><span class="token punctuation">,</span> <span class="token comment">// can be path to model file, or File() object</span>
-  <span class="token literal-property property">workerPath</span><span class="token operator">:</span> <span class="token string">"/your/project"</span><span class="token punctuation">,</span> <span class="token comment">// set path to directory of shout.wasm.worker.mjs</span>
   <span class="token literal-property property">audioWorkletsPath</span><span class="token operator">:</span> <span class="token string">"/your/project/audio-worklets"</span><span class="token punctuation">,</span> <span class="token comment">// set path to directory of vad.js, buffer.js</span>
 
   <span class="token comment">// called on new transcription</span>

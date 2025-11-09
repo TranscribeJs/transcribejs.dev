@@ -22,7 +22,6 @@ import { StreamTranscriber } from "@transcribe/transcriber";
 const streamTranscriber = new StreamTranscriber({
   createModule, // create module function from emscripten wasm build
   model: "/your/project/model.bin", // can be path to model file, or File() object
-  workerPath: "/your/project", // set path to directory of shout.wasm.worker.mjs
   audioWorkletsPath: "/your/project/audio-worklets", // set path to directory of vad.js, buffer.js
 
   // called on new transcription

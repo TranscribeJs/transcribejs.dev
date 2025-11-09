@@ -18,16 +18,15 @@ const streamTranscriber = new StreamTranscriber(options);
 
 ### Parameters
 
-| **Param**         | **Type**                                     | **Default**                                                 | **Description**                                                                                                            |
-| :---------------- | -------------------------------------------- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| **options**       | `FileTranscriberOptions`                     |                                                             |
-| createModule      | `(moduleArg = {}) => Promise<any>`           |                                                             | Exported `createModule()` function from `@transcribe/shout`                                                                |
-| model             | `string` \| `File`                           |                                                             | Whisper.cpp model file in ggml format. Will call `fetch()` if string, otherwise will use the provided file.                |
-| workerPath        | `string`                                     | Defaults to the directory where `shout.wasm.js` is located. | Path to `shout.wasm.worker.mjs` file.                                                                                      |
-| audioWorkletsPath | `string`                                     | `${currentUrl}/audio-worklets`                              | Path to `vad.js` & `buffer.js` files. Defaults to the `audio-worklets/` directory where `StreamTranscriber.js` is located. |
-| onReady           | `() => void`                                 | `() => {}`                                                  | Called after init.                                                                                                         |
-| onStreamStatus    | `(status: StreamStatus) => void`             | `() => {}`                                                  | Called when stream status changes. `StreamStatus: "loading" \| "waiting" \| "processing" \| "stopped"`                     |
-| onSegment         | `(segment: TranscribeResultSegment) => void` | `() => {}`                                                  | Called when a new transcribed segment is ready.                                                                            |
+| **Param**         | **Type**                                     | **Default**                    | **Description**                                                                                                            |
+| :---------------- | -------------------------------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
+| **options**       | `FileTranscriberOptions`                     |                                |
+| createModule      | `(moduleArg = {}) => Promise<any>`           |                                | Exported `createModule()` function from `@transcribe/shout`                                                                |
+| model             | `string` \| `File`                           |                                | Whisper.cpp model file in ggml format. Will call `fetch()` if string, otherwise will use the provided file.                |
+| audioWorkletsPath | `string`                                     | `${currentUrl}/audio-worklets` | Path to `vad.js` & `buffer.js` files. Defaults to the `audio-worklets/` directory where `StreamTranscriber.js` is located. |
+| onReady           | `() => void`                                 | `() => {}`                     | Called after init.                                                                                                         |
+| onStreamStatus    | `(status: StreamStatus) => void`             | `() => {}`                     | Called when stream status changes. `StreamStatus: "loading" \| "waiting" \| "processing" \| "stopped"`                     |
+| onSegment         | `(segment: TranscribeResultSegment) => void` | `() => {}`                     | Called when a new transcribed segment is ready.                                                                            |
 
 ### Returns
 

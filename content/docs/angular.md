@@ -87,7 +87,6 @@ export class AppComponent {
     this.transcriber = new FileTranscriber({
       createModule,
       model: "/ggml-tiny-q5_1.bin", // public path to model file
-      workerPath: "/", // public path to wasm worker files copied before
     });
 
     this.initTranscribe();

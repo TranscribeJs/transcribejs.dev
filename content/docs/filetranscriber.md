@@ -18,7 +18,6 @@ import { FileTranscriber } from "@transcribe/transcriber";
 const transcriber = new FileTranscriber({
   createModule, // create module function from emscripten wasm build
   model: "/path/to/model.bin", // can be path to model file, or File() object
-  workerPath: "/path/to/shout", // set path to directory of shout.wasm.worker.mjs
 
   dtwType: "tiny", // optional, use for word level timestamps, must match model type (tiny, tiny.en, base, base.en, ...)
 
@@ -37,7 +36,6 @@ const transcriber = new FileTranscriber({
   preRun: () => {},
   onAbort: () => {},
   onExit: (existStatus) => {},
-  locateFile: (file) => `path/${file}`, // used by shout.wasm.js to determine location of worker file; you don't need this if you've set `workerPath`
 });
 
 // init wasm (loads model file and creates a new shout instance)
