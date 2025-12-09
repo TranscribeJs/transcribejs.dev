@@ -25,10 +25,10 @@ Transcribe.js is a JavaScript library that provides a high level api/interface f
 
 All packages are under [@transcribe](https://www.npmjs.com/search?q=%40transcribe) namespace.
 
-| Package                 | Description                                                                                                                                                |
-| :---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| @transcribe/shout       | Wasm build based on [whisper.cpp](https://github.com/ggerganov/whisper.cpp). Contains Module file including the wasm binary and a separate webworker file. |
-| @transcribe/transcriber | `FileTranscriber` and `StreamTranscriber` for transcribing media files or streams.                                                                         |
+| Package                 | Description                                                                                                                  |
+| :---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| @transcribe/shout       | Wasm build based on [whisper.cpp](https://github.com/ggerganov/whisper.cpp). Contains Module file including the wasm binary. |
+| @transcribe/transcriber | `FileTranscriber` and `StreamTranscriber` for transcribing media files or streams.                                           |
 
 ## Support (ideas, code, coffee)
 

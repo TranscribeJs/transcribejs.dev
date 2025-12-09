@@ -63,7 +63,7 @@ app.use((req, res, next) => {
 // ...
 ```
 
-Depending on your deployment target you need to make sure that the webserver sets the [correct headers](/docs/prerequisite) for `shout.wasm.js` and `shout.wasm.worker.mjs` .
+Depending on your deployment target you need to make sure that the webserver sets the [correct headers](/docs/prerequisite) for `shout.wasm.js` .
 
 ## Import/Bundle
 

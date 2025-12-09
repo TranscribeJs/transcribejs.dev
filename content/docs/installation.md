@@ -22,7 +22,6 @@ The `shout.wasm` files must be accessable and served by your webserver. Dependin
 
 ```bash
 # copy shout wasm
-cp node_modules/@transcribe/shout/src/shout/shout.wasm.worker.mjs /your/project
 cp node_modules/@transcribe/shout/src/shout/shout.wasm.js /your/project
 
 # only needed if you want to use StreamTranscriber
