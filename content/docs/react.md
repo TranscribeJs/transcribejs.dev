@@ -16,6 +16,10 @@ npm install @transcribe/transcriber
 
 and copy the files from `@transcribe/shout` to `/public`
 
+### Model file
+
+Download a model file from [https://huggingface.co/ggerganov/whisper.cpp/tree/main](https://huggingface.co/ggerganov/whisper.cpp/tree/main) and place it in your public folder. eg. `/public/ggml-tiny-q5_1.bin` .
+
 ### Cross-Origin Headers
 
 The wasm files must be served with the correct Cross-Origin headers. Otherwise browsers will refuse to load the files.
